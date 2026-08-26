@@ -1,42 +1,60 @@
 <html>
     <head>
-        <title>HI!</title>
+        <title>Game Loop</title>
+        <style>
+            *{
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
     </head>
     <body>
-        <canvas id="canv">
-            
-        </canvas>
-          <script>
+
+        <canvas id="canv"></canvas>
+
+        <script src="Vector2.js"></script>
+
+        <script>
             let canvas = document.querySelector("#canv")
             let ctx = canvas.getContext("2d")
 
-            canvas.width = window.innerWidth
-            canvas.height = window.innerHeight
+            let position = new Vector2(150, 150)
 
-            ctx.save()
+            function update(){
+                position.x += 5
+                position.y += 5
+            }
 
-            ctx.translate(300, 300)
+            function gameLoop(){
+                update()
+                draw()
+                requestAnimationFrame(gameLoop)
+            }
 
-            ctx.lineTo(0, -200)
-            ctx.lineTo(100, -300)
-            ctx.lineTo(100, 0)
-            ctx.lineTo(500, -400)
-            ctx.lineTo(600, -500)
-            ctx.lineTo(550, 0)
-            ctx.lineTo(0, 400)
+            function draw(){
+                canvas.width = window.innerWidth
+                canvas.height = window.innerHeight
 
-            ctx.lineTo(0, -200)
-            ctx.lineTo(-100, -300)
-            ctx.lineTo(-100, 0)
-            ctx.lineTo(-500, -400)
-            ctx.lineTo(-600, -500)
-            ctx.lineTo(-550, 0)
-            ctx.lineTo(0, 400)
+                ctx.save()
 
+                ctx.translate(position.x, position.y)
 
-            ctx.fillStyle = "orange"
-            ctx.fill()
-            ctx.restore()
+                ctx.lineTo(0, -20)
+                ctx.lineTo(10, -30)
+                ctx.lineTo(10, 0)
+                ctx.lineTo(50, -40)
+                ctx.lineTo(0, -20)
+                ctx.lineTo(-10, -30)
+                ctx.lineTo(-10, 0)
+                ctx.lineTo(-50, -40)
+
+                ctx.fillStyle = "orange"
+                ctx.fill()
+                ctx.restore()
+            }
+
+            requestAnimationFrame(gameLoop)
         </script>
+
     </body>
 </html>
