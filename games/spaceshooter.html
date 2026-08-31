@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Game Loop</title>
+    <style>
+        * {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="canv"></canvas>
+
+    <script src="../engine/Vector2.js"></script>
+    <script src="../engine/Engine.js"></script>
+    <script src="../engine/Input.js"></script>
+
+    <script>
+        let position = new Vector2(150, 150)
+
+        function update() {
+            if (Input.keysDown.includes("ArrowRight"))
+                position.x += 25
+            if (Input.keysDown.includes("ArrowLeft"))
+                position.x -= 25
+            if (Input.keysDown.includes("ArrowUp"))
+                position.y -= 25
+            if (Input.keysDown.includes("ArrowDown"))
+                position.y += 25
+        }
+
+        function draw(ctx) {
+            ctx.save()
+
+            ctx.translate(position.x, position.y)
+
+            ctx.lineTo(0, -20)
+            ctx.lineTo(10, -30)
+            ctx.lineTo(10, 0)
+            ctx.lineTo(50, -40)
+            ctx.lineTo(0, -20)
+            ctx.lineTo(-10, -30)
+            ctx.lineTo(-10, 0)
+            ctx.lineTo(-50, -40)
+
+            ctx.fillStyle = "orange"
+            ctx.fill()
+            ctx.restore()
+        }
+
+        Engine.start()
+    </script>
+
+</body>
+
+</html>
