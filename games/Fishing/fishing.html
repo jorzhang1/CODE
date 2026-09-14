@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>Fishing Game</title>
+    <style>
+        * {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canv"></canvas>
+
+    <script src="../../engine/Vector2.js"></script>
+    <script src="../../engine/Engine.js"></script>
+    <script src="../../engine/Input.js"></script>
+    <script src="../../../engine/Scene.js"></script>
+    <script src="../../engine/GameObject.js"></script>
+    <script src="../../engine/Component.js"></script>
+    <script src="../../engine/components/Transform.js"></script>
+    <script src="../../engine/components/Polygon.js"></script>
+
+    <script src="MainScene.js"></script>
+    <script src="Fish.js"></script>
+    <script src="FishController.js"></script>
+    <script src="FishingRod.js"></script>
+    <script src="FishingRodController.js"></script>
+    <script src="Person.js"></script>
+    <script src="PersonController.js"></script>
+    <script>
+        Engine.currentScene = new MainScene()
+        Engine.start()
+    </script>
+</body>
+
+</html>
