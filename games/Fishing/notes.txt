@@ -1,0 +1,2 @@
+random fill style color
+fish random speed

@@ -1,7 +1,8 @@
 class GameObject {
     components = []
+    markForDestroy = false
 
-    get transform(){
+    get transform() {
         return this.components[0]
     }
 
@@ -9,7 +10,7 @@ class GameObject {
         this.addComponent(new Transform())
     }
 
-    addComponent(component, parameters){
+    addComponent(component, parameters) {
         Object.assign(component, parameters)
         this.components.push(component)
         component.gameObject = this
@@ -31,5 +32,9 @@ class GameObject {
         for (const component of this.components) {
             component.draw?.(ctx)
         }
+    }
+
+    destroy() {
+        this.markForDestroy = true
     }
 }

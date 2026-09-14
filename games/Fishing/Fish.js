@@ -3,7 +3,8 @@ class Fish extends GameObject {
         super()
         this.addComponent(new FishController())
         this.addComponent(new Polygon(), {
-            fillStyle: "blue", points: [
+            fillStyle: "rgb(116, 120, 181)", 
+            points: [
                 new Vector2(-30, 0),
                 new Vector2(-10, -15),
                 new Vector2(15, -15),
