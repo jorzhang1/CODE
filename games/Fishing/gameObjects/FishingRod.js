@@ -1,9 +1,10 @@
 class FishingRod extends GameObject {
     constructor() {
-        super()
+        super("FishingRod")
         this.addComponent(new FishingRodController())
         this.addComponent(new Polygon(), {
-            fillStyle: "red", points: [
+            fillStyle: "rgba(114, 205, 134, 0.9)",
+            points: [
                 new Vector2(0, 30),
                 new Vector2(5, 30),
                 new Vector2(50, -30),

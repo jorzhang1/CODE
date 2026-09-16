@@ -1,2 +1,11 @@
-random fill style color
-fish random speed
+hook + fishing line
+different fish
+bubbles
+occasional bird
+fish have slight movement variation
+clouds/sun
+sea objects like kelp
+waves
+fish hook collision
+hook movement
+visual timers

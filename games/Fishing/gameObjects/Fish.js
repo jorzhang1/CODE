@@ -1,9 +1,12 @@
 class Fish extends GameObject {
     constructor() {
-        super()
+        let r = Math.floor(Math.random() * 256)
+        let g = Math.floor(Math.random() * 256)
+        let b = Math.floor(Math.random() * 256)
+        super("Fish")
         this.addComponent(new FishController())
         this.addComponent(new Polygon(), {
-            fillStyle: "rgb(116, 120, 181)", 
+            fillStyle: `rgb(${r}, ${g}, ${b})`,
             points: [
                 new Vector2(-30, 0),
                 new Vector2(-10, -15),
@@ -18,5 +21,8 @@ class Fish extends GameObject {
                 new Vector2(-30, 0)
             ]
         })
+        this.speed = Math.random() * 400 + 50
+        this.value = Math.floor(this.speed)
+        this.size = 0
     }
 }

@@ -11,30 +11,40 @@
 </head>
 
 <body>
-    <canvas id="canv"></canvas>
-    <h1 style="position: absolute; z-index: 1000;">Press space to cast rod</h1>
+    <canvas id="canv" style="position: absolute; z-index: 0;"></canvas>
+    <h1 style="position: absolute; z-index: 1000; left: 250px; top: 25px;">Press Space - cast rod</h1>
+    <h1 style="position: absolute; z-index: 1000; left: 250px; top: 75px;">Press R - reel in</h1>
 
     <script src="../../engine/Vector2.js"></script>
     <script src="../../engine/Engine.js"></script>
     <script src="../../engine/Input.js"></script>
-    <script src="../../../engine/Scene.js"></script>
+    <script src="../../engine/Scene.js"></script>
+    <script src="../../engine/Time.js"></script>
     <script src="../../engine/GameObject.js"></script>
     <script src="../../engine/Component.js"></script>
     <script src="../../engine/components/Transform.js"></script>
     <script src="../../engine/components/Polygon.js"></script>
 
-    <script src="MainScene.js"></script>
-    <script src="Fish.js"></script>
-    <script src="FishController.js"></script>
-    <script src="FishingRod.js"></script>
-    <script src="FishingRodController.js"></script>
-    <script src="Person.js"></script>
-    <script src="PersonController.js"></script>
-    <script src="Hook.js"></script>
-    <script src="HookController.js"></script>
-    <script src="Boat.js"></script>
+    <script src="./scenes/OceanScene.js"></script>
+
+    <script src="./gameObjects/Fish.js"></script>
+    <script src="./gameObjects/FishingRod.js"></script>
+    <script src="./gameObjects/Person.js"></script>
+    <script src="./gameObjects/Hook.js"></script>
+    <script src="./gameObjects/Boat.js"></script>
+    <script src="./gameObjects/FishSpawner.js"></script>
+    <script src="./gameObjects/Bubble.js"></script>
+    <script src="./gameObjects/Decoration.js"></script>
+
+    <script src="./components/FishController.js"></script>
+    <script src="./components/FishingRodController.js"></script>
+    <script src="./components/HookController.js"></script>
+    <script src="./components/PersonController.js"></script>
+    <script src="./components/FishSpawnerController.js"></script>
+    <script src="./components/DecorationController.js"></script>
+    <script src="./components/BubbleController.js"></script>
     <script>
-        Engine.currentScene = new MainScene()
+        Engine.currentScene = new OceanScene()
         Engine.start()
     </script>
 </body>
