@@ -1,5 +1,5 @@
 class Fish extends GameObject {
-    constructor() {
+    constructor(fishID) {
         let r = Math.floor(Math.random() * 256)
         let g = Math.floor(Math.random() * 256)
         let b = Math.floor(Math.random() * 256)
@@ -24,5 +24,6 @@ class Fish extends GameObject {
         this.speed = Math.random() * 400 + 50
         this.value = Math.floor(this.speed)
         this.size = 0
+        this.fishID = fishID
     }
 }

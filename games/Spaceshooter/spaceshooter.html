@@ -20,20 +20,28 @@
     <script src="../../engine/GameObject.js"></script>
     <script src="../../engine/Component.js"></script>
     <script src="../../engine/Time.js"></script>
+    <script src="../../engine/SceneManager.js"></script>
     <script src="../../engine/components/Transform.js"></script>
     <script src="../../engine/components/Polygon.js"></script>
+    <script src="../../engine/components/TextLabel.js"></script>
 
-    <script src="../Spaceshooter/scenes/MainScene.js"></script>
+    <script src="../Spaceshooter/scenes/GenericLevel.js"></script>
+    <script src="../Spaceshooter/scenes/Level01.js"></script>
+    <script src="../Spaceshooter/scenes/Level02.js"></script>
+
     <script src="../Spaceshooter/gameObjects/MainGameObject.js"></script>
     <script src="../Spaceshooter/components/UpdateComponent.js"></script>
     <script src="../Spaceshooter/components/EnemyController.js"></script>
     <script src="../Spaceshooter/components/LaserController.js"></script>
+    <script src="../Spaceshooter/components/LevelController.js"></script>
+    <script src="../Spaceshooter/components/Health.js"></script>
     <script src="../Spaceshooter/Assets.js"></script>
     <script src="../Spaceshooter/gameObjects/LaserGameObject.js"></script>
     <script src="../Spaceshooter/gameObjects/EnemyGameObjects.js"></script>
+    <script src="../Spaceshooter/gameObjects/PointsGameObject.js"></script>
+    <script src="../Spaceshooter/gameObjects/LevelControllerGameObject.js"></script>
     <script>
-        Engine.currentScene = new MainScene()
-        Engine.start()
+        Engine.start(Level01)
     </script>
 </body>
 

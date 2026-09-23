@@ -16,5 +16,16 @@ class HookController extends Component {
             this.transform.position.x += 5
         if (Input.keysDown.includes("ArrowLeft") && this.transform.position.x > 0)
             this.transform.position.x -= 5
+
+        let myPosition = this.transform.position
+        let fishObject = GameObject.find("Fish")
+
+        if (fishObject) {
+            let fishPosition = fishObject.transform.position
+            let distance = myPosition.minus(fishPosition).magnitude
+            if (distance < 100) {
+                instantiate(new Spam(), new Vector2(500, 100))
+            }
+        }
     }
 }

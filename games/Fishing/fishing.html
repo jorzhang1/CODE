@@ -19,11 +19,13 @@
     <script src="../../engine/Engine.js"></script>
     <script src="../../engine/Input.js"></script>
     <script src="../../engine/Scene.js"></script>
+    <script src="../../engine/SceneManager.js"></script>
     <script src="../../engine/Time.js"></script>
     <script src="../../engine/GameObject.js"></script>
     <script src="../../engine/Component.js"></script>
     <script src="../../engine/components/Transform.js"></script>
     <script src="../../engine/components/Polygon.js"></script>
+    <script src="../../engine/components/TextLabel.js"></script>
 
     <script src="./scenes/OceanScene.js"></script>
 
@@ -36,6 +38,9 @@
     <script src="./gameObjects/Bubble.js"></script>
     <script src="./gameObjects/Decoration.js"></script>
     <script src="./gameObjects/Minigame.js"></script>
+    <script src="./gameObjects/Spam.js"></script>
+    <script src="./gameObjects/SpamBar.js"></script>
+    <script src="./gameObjects/SpamLine.js"></script>
 
     <script src="./components/FishController.js"></script>
     <script src="./components/FishingRodController.js"></script>
@@ -44,8 +49,9 @@
     <script src="./components/FishSpawnerController.js"></script>
     <script src="./components/DecorationController.js"></script>
     <script src="./components/BubbleController.js"></script>
+    <script src="./components/SpamController.js"></script>
     <script>
-        Engine.currentScene = new OceanScene()
+        SceneManager.currentScene = new OceanScene()
         Engine.start()
     </script>
 </body>
