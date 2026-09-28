@@ -1,6 +1,7 @@
 class Textlabel extends Component {
     fillStyle = "black"
     text = "[BLANK]"
+    font = "10px sans serif"
 
     draw(ctx) {
         let position = this.gameObject.transform.position
@@ -12,6 +13,7 @@ class Textlabel extends Component {
         ctx.rotate(this.transform.rotation)
 
         ctx.fillStyle = this.fillStyle
+        ctx.font = this.font
 
         ctx.fillText(this.text, 0, 0)
         ctx.fill()

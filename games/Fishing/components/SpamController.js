@@ -5,6 +5,7 @@ class SpamController extends Component {
         this.clicks = 0
         this.currentTime = 0
         this.spacePressed = false
+        this.timeSinceText = 0
 
         instantiate(new SpamBar(), new Vector2(500, 100))
         instantiate(new SpamLine(), new Vector2(500, 100))
@@ -13,11 +14,16 @@ class SpamController extends Component {
     }
 
     update() {
-        console.log(this.clicks)
         this.currentTime += Time.deltaTime
+        this.timeSinceText += Time.deltaTime
+
+        if (this.timeSinceText > 0.3) {
+            this.timeSinceText = 0
+            instantiate(new SpamText(), new Vector2(Math.random() * 200 + 600, Math.random() * 400 + 100))
+        }
 
         if (this.clicks > 0)
-            this.clicks -= 100 * Time.deltaTime
+            this.clicks -= 50 * Time.deltaTime
 
         if (Input.keysDown.includes("Space") && this.spacePressed == false) {
             this.clicks += 20
@@ -33,6 +39,8 @@ class SpamController extends Component {
             this.gameObject.destroy()
             this.line.destroy()
             this.bar.destroy()
+            Globals.money++
+
         }
         else if (this.currentTime > 10) {
             console.log("lost")

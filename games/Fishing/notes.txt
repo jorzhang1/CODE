@@ -9,10 +9,4 @@ waves
 fish hook collision
 hook movement
 visual timers
-
-
-    questions
-collisions
-gameobjects in gameobjects
-key press instead of key hold
-
+object ordering on screen
