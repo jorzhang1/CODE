@@ -47,6 +47,8 @@ class SpamController extends Component {
             Globals.money += this.gameObject.fishObject.value
             this.gameObject.fishObject.destroy()
             this.gameObject.hookController.fishingState = true
+            let success = instantiate(new WinText(), new Vector2(Math.random() * 250 + 550, Math.random() * 250 + 300))
+            success.getComponent(Textlabel).text = success.phrase + " +$" + this.gameObject.fishObject.value
         } else if (this.currentTime > 10) {
             console.log("lost")
             this.gameObject.destroy()
@@ -55,6 +57,7 @@ class SpamController extends Component {
             this.countdown.destroy()
             this.gameObject.fishObject.getComponent(FishController).caught = false
             this.gameObject.hookController.fishingState = true
+            let failure = instantiate(new LoseText(), new Vector2(Math.random() * 250 + 550, Math.random() * 250 + 300))
         }
 
         if (this.line) {

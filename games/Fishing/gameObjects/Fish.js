@@ -24,6 +24,6 @@ class Fish extends GameObject {
         this.speed = Math.random() * 400 + 50
         this.size = Math.random() * 0.75 + 0.75
         this.transform.scale = new Vector2(this.size, this.size)
-        this.value = Math.floor(this.speed * this.size)
+        this.value = Math.floor((this.speed * this.size)/10)
     }
 }

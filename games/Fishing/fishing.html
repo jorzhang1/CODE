@@ -8,15 +8,17 @@
             overflow: hidden;
         }
     </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <canvas id="canv" style="position: absolute; z-index: 0;"></canvas>
-    <h1 style="position: absolute; z-index: 1000; left: 250px; top: 25px;">Press Space - cast rod</h1>
-    <h1 style="position: absolute; z-index: 1000; left: 250px; top: 75px;">Press R - reel in</h1>
 
     <script src="../Fishing/Globals.js"></script>
-
 
     <script src="../../engine/Vector2.js"></script>
     <script src="../../engine/Engine.js"></script>
@@ -51,10 +53,12 @@
     <script src="./gameObjects/Countdown.js"></script>
     <script src="./gameObjects/Timing.js"></script>
     <script src="./gameObjects/TimingCursor.js"></script>
-    <script src="./gameObjects/ResultText.js"></script>
     <script src="./gameObjects/HorizontalBar.js"></script>
     <script src="./gameObjects/Target.js"></script>
     <script src="./gameObjects/TimingText.js"></script>
+    <script src="./gameObjects/Instructions.js"></script>
+    <script src="./gameObjects/WinText.js"></script>
+    <script src="./gameObjects/LoseText.js"></script>
 
     <script src="./components/FishController.js"></script>
     <script src="./components/FishingRodController.js"></script>
@@ -70,6 +74,7 @@
     <script src="./components/FishingLineController.js"></script>
     <script src="./components/TimingController.js"></script>
     <script src="./components/TimingCursorController.js"></script>
+    <script src="./components/ResulTextController.js"></script>
     <script>
         SceneManager.currentScene = new OceanScene()
         Engine.start()

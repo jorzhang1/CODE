@@ -1,7 +1,7 @@
 class MoneyGameObject extends GameObject {
     constructor() {
         super("MoneyGameObject")
-        this.addComponent(new Textlabel(), {text:"$0", font: "50px sans serif"})
+        this.addComponent(new Textlabel(), {text:"$0", font: "50px Fredoka"})
         this.addComponent(new MoneyController())
     }
 }
