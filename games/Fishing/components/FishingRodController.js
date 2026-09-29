@@ -5,11 +5,12 @@ class FishingRodController extends Component {
     }
 
     update() {
-        if(this.hookdown == true){
+        if (this.hookdown == true) {
             this.timeSinceCast += Time.deltaTime
         }
         if (Input.keysDown.includes("Space") && (this.hookdown == false)) {
-            instantiate(new Hook(), new Vector2(125, 100))
+            instantiate(new FishingLine())
+            instantiate(new Hook(), new Vector2(125, 100))            
             this.hookdown = true
             console.log("casted")
         }

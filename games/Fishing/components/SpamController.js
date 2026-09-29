@@ -1,21 +1,26 @@
 class SpamController extends Component {
     start() {
-        this.result = false
         this.goal = 500
         this.clicks = 0
         this.currentTime = 0
         this.spacePressed = false
         this.timeSinceText = 0
 
-        instantiate(new SpamBar(), new Vector2(500, 100))
-        instantiate(new SpamLine(), new Vector2(500, 100))
-        this.line = GameObject.find("SpamLine")
-        this.bar = GameObject.find("SpamBar")
+        this.bar = instantiate(new SpamBar(), new Vector2(500, 100))
+        this.line = instantiate(new SpamLine(), new Vector2(500, 100))
+        this.countdown = instantiate(new Countdown(), new Vector2(520, 150))
     }
 
     update() {
+        if (!this.countdown) {
+            return
+        }
+
         this.currentTime += Time.deltaTime
         this.timeSinceText += Time.deltaTime
+
+        let secondsRemaining = Math.ceil(10 - this.currentTime)
+        this.countdown.getComponent(Textlabel).text = secondsRemaining + " seconds"
 
         if (this.timeSinceText > 0.3) {
             this.timeSinceText = 0
@@ -34,19 +39,22 @@ class SpamController extends Component {
         }
 
         if (this.clicks > this.goal) {
-            this.result = true
             console.log("success")
             this.gameObject.destroy()
             this.line.destroy()
             this.bar.destroy()
-            Globals.money++
-
-        }
-        else if (this.currentTime > 10) {
+            this.countdown.destroy()
+            Globals.money += this.gameObject.fishObject.value
+            this.gameObject.fishObject.destroy()
+            this.gameObject.hookController.fishingState = true
+        } else if (this.currentTime > 10) {
             console.log("lost")
             this.gameObject.destroy()
             this.line.destroy()
             this.bar.destroy()
+            this.countdown.destroy()
+            this.gameObject.fishObject.getComponent(FishController).caught = false
+            this.gameObject.hookController.fishingState = true
         }
 
         if (this.line) {

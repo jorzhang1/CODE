@@ -1,7 +1,7 @@
 class Textlabel extends Component {
     fillStyle = "black"
     text = "[BLANK]"
-    font = "10px sans serif"
+    font = "10px Impact"
 
     draw(ctx) {
         let position = this.gameObject.transform.position
@@ -16,7 +16,6 @@ class Textlabel extends Component {
         ctx.font = this.font
 
         ctx.fillText(this.text, 0, 0)
-        ctx.fill()
         ctx.restore()
     }
 }

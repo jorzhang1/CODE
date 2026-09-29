@@ -1,5 +1,4 @@
     ideas
-hook + fishing line
 different fish
 occasional bird
 fish have slight movement variation
@@ -10,3 +9,6 @@ fish hook collision
 hook movement
 visual timers
 object ordering on screen
+make fonts cooler
+catch feedback
+upgrade shop
