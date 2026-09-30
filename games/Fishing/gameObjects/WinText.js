@@ -21,7 +21,8 @@ class WinText extends GameObject {
         let index = Math.floor(Math.random() * catchPhrases.length)
         this.phrase = catchPhrases[index]
 
-        this.addComponent(new Textlabel(), { text: "", font: "50px Fredoka", fillStyle: "rgb(143, 255, 163)" })
+        this.textColor = "143, 255, 163"
+        this.addComponent(new Textlabel(), { text: "", font: "60px Fredoka", fillStyle: "rgba(143, 255, 163, 1)" })
         this.addComponent(new ResultTextController())
     }
 }

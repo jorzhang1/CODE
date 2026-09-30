@@ -16,7 +16,8 @@ class LoseText extends GameObject {
         let index = Math.floor(Math.random() * lostPhrases.length)
         this.phrase = lostPhrases[index]
 
-        this.addComponent(new Textlabel(), { text: this.phrase, font: "50px Fredoka", fillStyle: "rgb(177, 70, 70)" })
+        this.textColor = "177, 70, 70"
+        this.addComponent(new Textlabel(), { text: this.phrase, font: "60px Fredoka", fillStyle: "rgba(177, 70, 70, 1)" })
         this.addComponent(new ResultTextController())
     }
 }
