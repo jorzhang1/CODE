@@ -3,7 +3,7 @@ class Fish extends GameObject {
         let r = Math.floor(Math.random() * 256)
         let g = Math.floor(Math.random() * 256)
         let b = Math.floor(Math.random() * 256)
-        super("Fish", ["Fish"])
+        super("Fish", ["Fish"], "fish")
         this.addComponent(new FishController())
         this.addComponent(new Polygon(), {
             fillStyle: `rgb(${r}, ${g}, ${b})`,

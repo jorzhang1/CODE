@@ -1,6 +1,6 @@
 class LoseText extends GameObject {
     constructor() {
-        super("LoseText")
+        super("LoseText", [], "minigame")
         let lostPhrases = [
             "The fish got away!",
             "So close!",

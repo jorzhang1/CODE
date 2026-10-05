@@ -1,6 +1,6 @@
 class SpamBar extends GameObject {
     constructor() {
-        super("SpamBar")
+        super("SpamBar", [], "minigame")
         this.addComponent(new Polygon(), {
             fillStyle: "rgb(161, 162, 161)",
             points: [

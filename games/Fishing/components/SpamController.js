@@ -6,9 +6,9 @@ class SpamController extends Component {
         this.spacePressed = false
         this.timeSinceText = 0
 
-        this.bar = instantiate(new SpamBar(), new Vector2(500, 100))
-        this.line = instantiate(new SpamLine(), new Vector2(500, 100))
-        this.countdown = instantiate(new Countdown(), new Vector2(520, 150))
+        this.bar = instantiate(new SpamBar(), new Vector2(-200, -200))
+        this.line = instantiate(new SpamLine(), new Vector2(-200, 0))
+        this.countdown = instantiate(new Countdown(), new Vector2(-200, -200))
     }
 
     update() {
@@ -24,7 +24,7 @@ class SpamController extends Component {
 
         if (this.timeSinceText > 0.3) {
             this.timeSinceText = 0
-            instantiate(new SpamText(), new Vector2(Math.random() * 200 + 600, Math.random() * 400 + 100))
+            instantiate(new SpamText(), new Vector2(Math.random() * -400 + 200, Math.random() * 400 + -200))
         }
 
         if (this.clicks > 0)
@@ -47,7 +47,7 @@ class SpamController extends Component {
             Globals.money += this.gameObject.fishObject.value
             this.gameObject.fishObject.destroy()
             this.gameObject.hookController.fishingState = true
-            let success = instantiate(new WinText(), new Vector2(Math.random() * 250 + 550, Math.random() * 250 + 300))
+            let success = instantiate(new WinText(), new Vector2(Math.random() * 250 + 0, Math.random() * 250 + 0))
             success.getComponent(Textlabel).text = success.phrase + " +$" + this.gameObject.fishObject.value
         } else if (this.currentTime > 10) {
             console.log("lost")
@@ -57,11 +57,11 @@ class SpamController extends Component {
             this.countdown.destroy()
             this.gameObject.fishObject.getComponent(FishController).caught = false
             this.gameObject.hookController.fishingState = true
-            let failure = instantiate(new LoseText(), new Vector2(Math.random() * 250 + 550, Math.random() * 250 + 300))
+            let failure = instantiate(new LoseText(), new Vector2(Math.random() * 250 + 0, Math.random() * 250 + 0))
         }
 
         if (this.line) {
-            this.line.getComponent(Polygon).transform.position.y = -(this.clicks)
+            this.line.getComponent(Polygon).transform.position.y = -(this.clicks) - 300
         }
     }
 }

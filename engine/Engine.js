@@ -1,13 +1,17 @@
 class Engine {
     static canvas
     static ctx
+    static layers = ["default", "UI"]
 
-    static start(nextScene) {
+    static start(nextScene, settings) {
         Engine.canvas = document.querySelector("#canv")
         Engine.ctx = Engine.canvas.getContext("2d")
         addEventListener("keydown", Input.keydown)
         addEventListener("keyup", Input.keyup)
         SceneManager.nextScene = nextScene
+        if (settings) {
+            Engine.layers = settings.layers
+        }
         requestAnimationFrame(Engine.gameLoop)
     }
 
@@ -28,7 +32,7 @@ class Engine {
     static draw() {
         Engine.canvas.width = window.innerWidth
         Engine.canvas.height = window.innerHeight
-        Engine.ctx.fillStyle = "hsla(212, 100%, 72%, 0.63)"
+        Engine.ctx.fillStyle = "white"
         Engine.ctx.fillRect(0, 250, Engine.canvas.width, Engine.canvas.height)
         SceneManager.currentScene.draw(Engine.ctx)
     }

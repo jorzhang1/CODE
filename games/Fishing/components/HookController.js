@@ -4,17 +4,17 @@ class HookController extends Component {
     }
 
     update() {
-        if (this.transform.position.y < 275) {
+        if (this.transform.position.y < -100) {
             this.transform.position.y += 300 * Time.deltaTime
         }
         if (this.fishingState == true) {
-            if (Input.keysDown.includes("ArrowUp") && this.transform.position.y > 0)
+            if (Input.keysDown.includes("ArrowUp") && this.transform.position.y > -500)
                 this.transform.position.y -= 300 * Time.deltaTime
-            if (Input.keysDown.includes("ArrowDown") && this.transform.position.y < 625)
+            if (Input.keysDown.includes("ArrowDown") && this.transform.position.y < 300)
                 this.transform.position.y += 300 * Time.deltaTime
-            if (Input.keysDown.includes("ArrowRight") && this.transform.position.x < 1450)
+            if (Input.keysDown.includes("ArrowRight") && this.transform.position.x < 700)
                 this.transform.position.x += 300 * Time.deltaTime
-            if (Input.keysDown.includes("ArrowLeft") && this.transform.position.x > 0)
+            if (Input.keysDown.includes("ArrowLeft") && this.transform.position.x > -700)
                 this.transform.position.x -= 300 * Time.deltaTime
         }
 
@@ -31,12 +31,12 @@ class HookController extends Component {
 
                 if (Input.keysDown.includes("KeyT") && this.fishingState == true) {
                     this.fishingState = false
-                    let minigames = [Spam, Timing]
+                    let minigames = [Timing, Spam]
 
                     let randomIndex = Math.floor(Math.random() * minigames.length)
                     let MinigameType = minigames[randomIndex]
 
-                    let minigame = instantiate(new MinigameType(), new Vector2(500, 100))
+                    let minigame = instantiate(new MinigameType(), new Vector2(0, 0))
                     minigame.fishObject = fishObject
                     minigame.hookController = this
 

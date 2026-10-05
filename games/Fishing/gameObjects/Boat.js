@@ -1,6 +1,6 @@
 class Boat extends GameObject {
     constructor() {
-        super("Boat")
+        super("Boat", [], "player")
         this.addComponent(new Polygon(), {
             fillStyle: "rgb(139, 89, 51)",
             points: [

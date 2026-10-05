@@ -15,7 +15,7 @@ class FishingRodController extends Component {
         }
         if (Input.keysDown.includes("Space") && (this.hookdown == false)) {
             instantiate(new FishingLine())
-            instantiate(new Hook(), new Vector2(125, 100))
+            instantiate(new Hook(), new Vector2(-400, -250))
             this.hookdown = true
             console.log("casted")
         }

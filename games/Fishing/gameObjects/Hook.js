@@ -1,6 +1,6 @@
 class Hook extends GameObject {
     constructor() {
-        super("Hook")
+        super("Hook", [], "player")
         this.addComponent(new HookController())
         this.addComponent(new Polygon(), {
             fillStyle: "rgb(0, 0, 0)", 

@@ -18,10 +18,12 @@ class UpdateComponent extends Component {
         if (Input.keysDown.includes("ArrowDown"))
             this.transform.position.y += Time.deltaTime * this.speed
 
-        if (this.timeSinceLastLaser > 20) {
+        if (this.timeSinceLastLaser > 5) {
             this.timeSinceLastLaser = 0
             instantiate(new LaserGameObject(), this.transform.position.clone())
         }
+
+        Camera.main.transform.position = this.transform.position.clone()
     }
 }
 

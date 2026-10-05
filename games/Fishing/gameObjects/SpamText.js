@@ -1,6 +1,6 @@
 class SpamText extends GameObject {
     constructor() {
-        super("SpamText")
+        super("SpamText", [], "minigame")
         this.addComponent(new Textlabel(), {text:"TAP SPACE!"})
         this.addComponent(new SpamTextController())
     }

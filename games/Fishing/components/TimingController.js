@@ -2,11 +2,11 @@ class TimingController extends Component {
     start() {
         this.spacePressed = false
         this.roundsLeft = 3
-        this.bar = instantiate(new HorizontalBar(), new Vector2(500, 100))
-        this.target = instantiate(new Target(), new Vector2(Math.random() * 600 + 500, 100))
-        this.countdown = instantiate(new Countdown(), new Vector2(520, 150))
-        this.cursor = instantiate(new TimingCursor(), new Vector2(500, 100))
-        this.timingText = instantiate(new TimingText(), new Vector2(500, 100))
+        this.bar = instantiate(new HorizontalBar(), new Vector2(-200, -100))
+        this.target = instantiate(new Target(), new Vector2(Math.random() * 500 + -200, -100))
+        this.countdown = instantiate(new Countdown(), new Vector2(0, -125))
+        this.cursor = instantiate(new TimingCursor(), new Vector2(-200, -100))
+        this.timingText = instantiate(new TimingText(), new Vector2(-200, -125))
         this.timeRemaining = 10
     }
 
@@ -27,12 +27,12 @@ class TimingController extends Component {
             let distance = targetPosition.minus(cursorPosition).magnitude
 
             if (distance > 100) {
-                this.target.transform.position = new Vector2(Math.random() * 400 + 500, 100)
+                this.target.transform.position = new Vector2(Math.random() * 500 + -200, -100)
                 this.timeRemaining -= 1
             } else if (distance < 100) {
-                this.target.transform.position = new Vector2(Math.random() * 400 + 500, 100)
+                this.target.transform.position = new Vector2(Math.random() * 500 + -200, -100)
                 this.roundsLeft--
-                this.timingText.getComponent(Textlabel).text = this.roundsLeft + "rounds left"
+                this.timingText.getComponent(Textlabel).text = this.roundsLeft + " rounds left"
             }
         }
         if (!Input.keysDown.includes("Space")) {
@@ -50,7 +50,7 @@ class TimingController extends Component {
             Globals.money += this.gameObject.fishObject.value
             this.gameObject.fishObject.destroy()
             this.gameObject.hookController.fishingState = true
-            let success = instantiate(new WinText(), new Vector2(Math.random() * 250 + 550, Math.random() * 250 + 300))
+            let success = instantiate(new WinText(), new Vector2(Math.random() * 400 + -200, Math.random() * 200 + -100))
             success.getComponent(Textlabel).text = success.phrase + " +$" + this.gameObject.fishObject.value
         } else if (this.timeRemaining <= 0) {
             console.log("lost")
@@ -62,7 +62,7 @@ class TimingController extends Component {
             this.cursor.destroy()
             this.gameObject.fishObject.getComponent(FishController).caught = false
             this.gameObject.hookController.fishingState = true
-            let failure = instantiate(new LoseText(), new Vector2(Math.random() * 250 + 550, Math.random() * 250 + 300))
+            let failure = instantiate(new LoseText(), new Vector2(Math.random() * -400 + 200, Math.random() * 200 + -100))
         }
     }
 }

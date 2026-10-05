@@ -1,6 +1,6 @@
 class Person extends GameObject {
     constructor() {
-        super("Person")
+        super("Person", [], "player")
         this.addComponent(new PersonController())
         this.addComponent(new Polygon(), {
             fillStyle: "rgb(222, 217, 187)", points: [

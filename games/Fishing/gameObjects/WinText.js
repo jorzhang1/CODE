@@ -1,6 +1,6 @@
 class WinText extends GameObject {
     constructor() {
-        super("WinText")
+        super("WinText", [], "minigame")
         let catchPhrases = [
             "Nice catch!",
             "Fish hooked!",

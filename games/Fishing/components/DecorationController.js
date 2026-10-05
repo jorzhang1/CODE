@@ -8,7 +8,7 @@ class DecorationController extends Component {
 
         if (this.timeSinceLastBubble > 0.5) {
             this.timeSinceLastBubble = 0
-            instantiate(new Bubble(), new Vector2(Math.random() * 1500, 1000))
+            instantiate(new Bubble(), new Vector2(Math.random() * 1250 + -750, 400))
         }
     }
 }

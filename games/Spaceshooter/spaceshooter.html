@@ -8,6 +8,10 @@
             overflow: hidden;
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -24,6 +28,7 @@
     <script src="../../engine/components/Transform.js"></script>
     <script src="../../engine/components/Polygon.js"></script>
     <script src="../../engine/components/TextLabel.js"></script>
+    <script src="../../engine/components/Camera.js"></script>
 
     <script src="../Spaceshooter/scenes/GenericLevel.js"></script>
     <script src="../Spaceshooter/scenes/Level01.js"></script>
@@ -36,14 +41,17 @@
     <script src="../Spaceshooter/components/LevelController.js"></script>
     <script src="../Spaceshooter/components/PointsController.js"></script>
     <script src="../Spaceshooter/components/Health.js"></script>
+
     <script src="../Spaceshooter/Assets.js"></script>
     <script src="../Spaceshooter/Globals.js"></script>
+    <script src="../Spaceshooter/Settings.js"></script>
+
     <script src="../Spaceshooter/gameObjects/LaserGameObject.js"></script>
     <script src="../Spaceshooter/gameObjects/EnemyGameObjects.js"></script>
     <script src="../Spaceshooter/gameObjects/PointsGameObject.js"></script>
     <script src="../Spaceshooter/gameObjects/LevelControllerGameObject.js"></script>
     <script>
-        Engine.start(Level01)
+        Engine.start(Level01, Settings)
     </script>
 </body>
 

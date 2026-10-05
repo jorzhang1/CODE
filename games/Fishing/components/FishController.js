@@ -11,7 +11,7 @@ class FishController extends Component {
         }
 
 
-        if (this.transform.position.x > 2000) {
+        if (this.transform.position.x > 700) {
             this.gameObject.destroy()
         }
     }

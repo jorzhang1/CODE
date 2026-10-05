@@ -19,6 +19,8 @@
     <canvas id="canv" style="position: absolute; z-index: 0;"></canvas>
 
     <script src="../Fishing/Globals.js"></script>
+    <script src="../Fishing/Settings.js"></script>
+    <script src="../Fishing/Assets.js"></script>
 
     <script src="../../engine/Vector2.js"></script>
     <script src="../../engine/Engine.js"></script>
@@ -31,6 +33,7 @@
     <script src="../../engine/components/Transform.js"></script>
     <script src="../../engine/components/Polygon.js"></script>
     <script src="../../engine/components/TextLabel.js"></script>
+    <script src="../../engine/components/Camera.js"></script>
 
     <script src="./scenes/OceanScene.js"></script>
 
@@ -56,6 +59,7 @@
     <script src="./gameObjects/HorizontalBar.js"></script>
     <script src="./gameObjects/Target.js"></script>
     <script src="./gameObjects/TimingText.js"></script>
+    <script src="./gameObjects/Water.js"></script>
     <script src="./gameObjects/Instructions.js"></script>
     <script src="./gameObjects/WinText.js"></script>
     <script src="./gameObjects/LoseText.js"></script>
@@ -76,8 +80,7 @@
     <script src="./components/TimingCursorController.js"></script>
     <script src="./components/ResulTextController.js"></script>
     <script>
-        SceneManager.currentScene = new OceanScene()
-        Engine.start()
+        Engine.start(OceanScene, Settings)
     </script>
 </body>
 

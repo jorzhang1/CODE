@@ -1,6 +1,6 @@
 class Bubble extends GameObject {
     constructor() {
-        super("Bubble")
+        super("Bubble", [], "background")
         this.addComponent(new BubbleController())
         this.speed = Math.random() * 150 + 50
         this.size = Math.random() * 2 + 1

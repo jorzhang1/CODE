@@ -10,7 +10,7 @@ class FishingLineController extends Component {
             return
         }
 
-        this.transform.position = new Vector2(110, 120)
+        this.transform.position = new Vector2(-495, -280)
         let hookPosition = hook.transform.position.minus(this.transform.position)
         this.gameObject.getComponent(Polygon).points = [
             new Vector2(-2, 0),
