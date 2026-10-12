@@ -1,3 +1,3 @@
- class Globals {
-    static points = 0
-} 
+/* class Globals {
+     static points = 0
+ }  */

@@ -20,3 +20,5 @@ bigger fish
 new scenes
 cosmetics
 decorations
+
+    loot boxes
