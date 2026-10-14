@@ -2,12 +2,12 @@ class LootBoxCursor extends GameObject {
     constructor() {
         super("LootBoxCursor", [], "UI")
         this.addComponent(new Polygon(), {
-            fillStyle: "rgb(255, 0, 0)",
+            fillStyle: "rgba(102, 102, 102, 0.3)",
             points: [
                 new Vector2(0, 0),
                 new Vector2(0, 400),
-                new Vector2(10, 400),
-                new Vector2(10, 0),
+                new Vector2(5, 400),
+                new Vector2(5, 0),
             ]
         })
     }

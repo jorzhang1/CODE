@@ -11,6 +11,7 @@ visual timers
 object ordering on screen
 tasks?
 fish collection??
+!customization screen!
 
     upgrade shop
 faster hook
@@ -22,3 +23,5 @@ cosmetics
 decorations
 
     loot boxes
+bruh
+

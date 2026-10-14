@@ -4,6 +4,7 @@ class GameObject {
     name
     tags = []
     layer = "default"
+    opacity = 1
 
     get transform() {
         return this.components[0]
@@ -39,10 +40,11 @@ class GameObject {
         for (const component of this.components) {
             component.update?.()
         }
-    }
+    }  
 
     draw(ctx) {
         ctx.save()
+        ctx.globalAlpha *= this.opacity
         ctx.setTransform(ctx.getTransform().multiply(this.transform.getWorldMatrix()))
         for (const component of this.components) {
             component.draw?.(ctx)

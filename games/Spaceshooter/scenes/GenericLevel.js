@@ -6,5 +6,10 @@ class GenericLevel extends Scene {
         let helperGameObject1 = this.instantiate(new HelperGameObject(), new Vector2(200, 200))
 
         helperGameObject1.transform.setParent(mainGameObject.transform)
+
+        let sceneTimer = new GameObject("SceneTimer", [], "UI")
+        sceneTimer.addComponent(new Textlabel(), { text: "", font: "200px Fredoka", fillStyle: "rgba(143, 255, 163, 1)" })
+        sceneTimer.addComponent(new SceneTimerController())
+        this.instantiate(sceneTimer, new Vector2(500, 500))
     }
 }
