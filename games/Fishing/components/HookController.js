@@ -20,6 +20,25 @@ class HookController extends Component {
 
         let myPosition = this.transform.position
         let fishObjects = GameObject.findGameObjectsWithTag("Fish")
+        let crates = GameObject.findGameObjectsWithTag("Crate")
+
+        if (crates) {
+            for (const crate of crates) {
+                let cratePosition = crate.transform.position
+                let distance = myPosition.minus(cratePosition).magnitude
+                if (distance < 50) {
+                    if (this.fishingState == true) {
+                        let text = instantiate(new HookText(), this.transform.position)
+                        text.getComponent(Textlabel).text = "Press T to catch crate!"
+                    }
+
+                    if (Input.keysDownThisFrame.includes("KeyT") && this.fishingState == true) {
+                        crate.getComponent(CrateController).caught = true
+                        Globals.crateCount += 1
+                    }
+                }
+            }
+        }
 
         for (const fishObject of fishObjects) {
             let fishPosition = fishObject.transform.position

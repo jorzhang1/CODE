@@ -8,7 +8,12 @@ class FishSpawnerController extends Component {
 
         if (this.timeSinceLastFish > 1) {
             this.timeSinceLastFish = 0
-            instantiate(new Fish(), new Vector2(-750, Math.random() * 400 + -75))
+            let crate = Math.random() * 100
+            if (crate < 5) {
+                instantiate(new Crate(), new Vector2(-750, Math.random() * 400 + -75))
+            } else {
+                instantiate(new Fish(), new Vector2(-750, Math.random() * 400 + -75))
+            }
         }
     }
 }

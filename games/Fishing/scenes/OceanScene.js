@@ -7,9 +7,8 @@ class OceanScene extends Scene {
         this.instantiate(new Boat(), new Vector2(-550, -200))
         this.instantiate(new Decoration())
         this.instantiate(new MoneyGameObject(), new Vector2(500, -250))
-        this.instantiate(new Instructions(), new Vector2(-400, -300))
+        this.instantiate(new Instructions(), new Vector2(350, 80))
         this.instantiate(new Water(), new Vector2(-750, -150))
-
-        this.instantiate(new LootBoxGameObject())
+        this.instantiate(new SceneControllerGameobject(), new Vector2(0, 0))
     }
 }

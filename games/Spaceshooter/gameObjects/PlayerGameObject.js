@@ -1,4 +1,4 @@
-class MainGameObject extends GameObject {
+class PlayerGameObject extends GameObject {
     constructor() {
         super("Spaceship", [], "ships")
         this.addComponent(new UpdateComponent())
@@ -14,5 +14,6 @@ class MainGameObject extends GameObject {
                 new Vector2(-50, -40)
             ]
         })
+        this.addComponent(new Collider(), { points: Assets.triangle })
     }
 }
