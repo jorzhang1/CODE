@@ -65,7 +65,7 @@ class LootBoxController extends Component {
                     console.log("Unlocked " + this.winningItem.name)
 
                 } else {
-                    
+
                     console.log(this.winningItem.name + " already unlocked")
                 }
             }
@@ -82,6 +82,9 @@ class LootBoxController extends Component {
                 this.cursor.destroy()
                 this.reel.destroy()
                 this.gameObject.destroy()
+
+                let shopControllerObject = GameObject.findGameObjectsByType(ShopController)[0]
+                shopControllerObject.getComponent(ShopController).opening = false
             }
         }
         for (const card of this.cards) {

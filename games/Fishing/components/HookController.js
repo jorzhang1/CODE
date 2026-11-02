@@ -4,6 +4,10 @@ class HookController extends Component {
     }
 
     update() {
+        if (SceneManager.currentScene instanceof ShopScene) {
+            return
+        }
+        
         if (this.transform.position.y < -100) {
             this.transform.position.y += 300 * Time.deltaTime
         }
@@ -35,6 +39,7 @@ class HookController extends Component {
                     if (Input.keysDownThisFrame.includes("KeyT") && this.fishingState == true) {
                         crate.getComponent(CrateController).caught = true
                         Globals.crateCount += 1
+                        crate.destroy()
                     }
                 }
             }

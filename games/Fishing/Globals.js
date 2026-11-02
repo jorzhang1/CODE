@@ -4,7 +4,9 @@ class Globals {
     static lootObtained = []
     static equippedBoatSkinId = null
     static equippedRodSkinId = null
+    static equippedCharacterSkinId = null
+    static equippedHookSkinId = null
 
     static crateCount = 0
-    static cratePrice = 100
+    static cratePrice = 10
 }

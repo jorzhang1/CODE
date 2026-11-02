@@ -5,6 +5,10 @@ class FishingRodController extends Component {
     }
 
     update() {
+        if (SceneManager.currentScene instanceof ShopScene) {
+            return
+        }
+
         let hook = GameObject.find("Hook")
         if (hook) {
             this.hookController = hook.getComponent(HookController)
