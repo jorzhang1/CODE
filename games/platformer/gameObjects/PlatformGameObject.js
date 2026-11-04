@@ -3,6 +3,6 @@ class PlatformGameObject extends GameObject{
     super("PlatformGameObject", [], "default")
     this.addComponent(new Polygon(), {fillStyle: "blue", points: Assets.square})
     this.addComponent(new Collider())
-    this.transform.scale = new Vector2(350, 20)
+    this.transform.scale = new Vector2(500, 50)
   }
 }
