@@ -11,6 +11,7 @@ class ShopScene extends Scene {
         let characterGroup = new GameObject("characterGroup", [], "background")
         characterGroup.transform.setParent(rightSide.transform)
         let character = this.instantiate(new Person(), new Vector2(125, 125))
+        this.character = character
         let box1 = this.instantiate(new AccessoryBox(), new Vector2(20, 20))
         character.transform.setParent(box1.transform)
         box1.transform.setParent(characterGroup.transform)
@@ -22,6 +23,7 @@ class ShopScene extends Scene {
         let boatGroup = new GameObject("boatGroup", [], "background")
         boatGroup.transform.setParent(rightSide.transform)
         let boat = this.instantiate(new Boat(), new Vector2(125, 125))
+        this.boat = boat
         let box2 = this.instantiate(new AccessoryBox(), new Vector2(320, 20))
         box2.transform.setParent(boatGroup.transform)
         boat.transform.setParent(box2.transform)
@@ -35,6 +37,7 @@ class ShopScene extends Scene {
         rodGroup.transform.setParent(rightSide.transform)
         let box3 = this.instantiate(new AccessoryBox(), new Vector2(20, 320))
         let rod = this.instantiate(new FishingRod(), new Vector2(125, 125))
+        this.rod = rod
         box3.transform.setParent(rodGroup.transform)
         rod.transform.setParent(box3.transform)
         let text3 = new GameObject("text3", [], "background")
@@ -46,6 +49,7 @@ class ShopScene extends Scene {
         hookGroup.transform.setParent(rightSide.transform)
         let box4 = this.instantiate(new AccessoryBox(), new Vector2(320, 320))
         let hook = this.instantiate(new Hook(), new Vector2(125, 125))
+        this.hook = hook
         box4.transform.setParent(hookGroup.transform)
         hook.transform.setParent(box4.transform)
         let text4 = new GameObject("text4", [], "background")

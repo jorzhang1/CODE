@@ -1,5 +1,5 @@
 class SquareController extends Component {
-  speed = 200
+  speed = 1000
   start() {
     this.isGrounded = false
     this.lastJumpTime = 0

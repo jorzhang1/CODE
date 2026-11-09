@@ -5,7 +5,7 @@ class LootCatalog {
             name: "Blue Boat",
             type: "boatSkin",
             rarity: "common",
-            color: "rgba(209, 209, 209, 1)",
+            color: "rgb(117, 170, 235))",
             weight: 80
         },
         {
@@ -13,7 +13,7 @@ class LootCatalog {
             name: "Coral Boat",
             type: "boatSkin",
             rarity: "uncommon",
-            color: "rgba(78, 212, 87, 1)",
+            color: "rgb(172, 78, 212)",
             weight: 17
         },
         {
